@@ -4,7 +4,7 @@
 
 > "AI should not decide when a missing-person search ends. It should make sure the evidence supports the decision."
 
-Built by Team Siwool for WAICY 2026.
+Built for SXSW.
 
 ## The problem
 
@@ -32,7 +32,7 @@ This repo is a **static, dependency-free web prototype** of the detection engine
 
 It includes 10 synthetic cases (no real police data or personal information) covering every error type from the project plan — evidence missing, semantic contradiction, status contradiction, temporal contradiction, officer-level pattern anomaly, a deliberately *hard* ambiguous-but-legitimate negative case, and a clean case — plus a toggle between two of the three models described below, so you can see what the extra checks actually buy you.
 
-This is framed as an **experiment, not just an app** — see Section 7 of the project plan: the real question for a competition like WAICY isn't "can you build a screen," it's "which detection approach actually catches dangerous closures without drowning reviewers in false positives." The prototype compares:
+This is framed as an **experiment, not just an app** — see Section 7 of the project plan: the real question isn't "can you build a screen," it's "which detection approach actually catches dangerous closures without drowning reviewers in false positives." The prototype compares:
 
 | Model | What it checks |
 |---|---|
@@ -44,7 +44,7 @@ The evaluation metrics that matter most are **Recall** and **False Negative Rate
 
 ### Note on the current implementation
 
-The "Semantic Consistency" step in this prototype is implemented with structured field comparisons (not a live LLM call), so the whole demo can run as a static page with zero backend and zero API cost. The project plan's roadmap replaces that one function with a real model (Model B / C comparison) once the team moves to the 500–1,000-case synthetic dataset — every other check, and the human-in-the-loop output contract, stays the same.
+The "Semantic Consistency" step in this prototype is implemented with structured field comparisons (not a live LLM call), so the whole demo can run as a static page with zero backend and zero API cost. The project plan's roadmap replaces that one function with a real model (Model B / C comparison) once the dataset scales to 500–1,000 synthetic cases — every other check, and the human-in-the-loop output contract, stays the same.
 
 ## Project structure
 
@@ -74,4 +74,4 @@ python3 -m http.server 8000
 
 ## Roadmap
 
-See the full project plan for the September–December development timeline: synthetic dataset scale-up to 500–1,000 cases, Model A/B/C comparison experiment with Precision/Recall/F1/FPR/FNR per error type, and UI/explainability improvements ahead of the WAICY final presentation.
+See the full project plan for the development timeline: synthetic dataset scale-up to 500–1,000 cases, Model A/B/C comparison experiment with Precision/Recall/F1/FPR/FNR per error type, and UI/explainability improvements ahead of the final presentation.

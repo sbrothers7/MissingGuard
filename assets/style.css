@@ -1,0 +1,236 @@
+:root {
+  --navy: #10213f;
+  --navy-light: #1c3463;
+  --accent: #2f6fed;
+  --red: #c0362c;
+  --red-bg: #fdeceb;
+  --amber: #a15c00;
+  --amber-bg: #fff4e0;
+  --green: #1b7a43;
+  --green-bg: #e9f8ee;
+  --ink: #1a1f2b;
+  --muted: #5a6477;
+  --border: #e2e5ec;
+  --bg: #f5f6f9;
+  font-size: 16px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.site-header {
+  background: linear-gradient(135deg, var(--navy), var(--navy-light));
+  color: #fff;
+  padding: 2rem 1.5rem 1.6rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.brand-mark { font-size: 2.1rem; }
+
+.brand h1 { margin: 0; font-size: 1.7rem; letter-spacing: -0.02em; }
+
+.tagline { margin: 0.2rem 0 0; color: #c7d2ea; font-size: 0.95rem; }
+
+.thesis {
+  max-width: 980px;
+  margin: 1.1rem auto 0;
+  font-style: italic;
+  color: #e4e9f6;
+  border-left: 3px solid var(--accent);
+  padding-left: 0.8rem;
+}
+
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.intro p { margin: 0 0 0.8rem; }
+
+.disclaimer {
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+}
+
+.mode-toggle {
+  margin: 1.4rem 0 1rem;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.mode-label { font-weight: 600; font-size: 0.9rem; color: var(--muted); }
+
+.toggle-group { display: inline-flex; gap: 0.5rem; margin-left: 0.6rem; }
+
+.mode-btn {
+  border: 1px solid var(--border);
+  background: #f3f4f8;
+  color: var(--ink);
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.mode-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.mode-desc { margin: 0.7rem 0 0; font-size: 0.85rem; color: var(--muted); }
+
+.app-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.case-list {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-height: 640px;
+  overflow-y: auto;
+}
+
+.case-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.1rem 0.5rem;
+  text-align: left;
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 0.55rem 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.82rem;
+}
+
+.case-item:hover { background: #f3f4f8; }
+
+.case-item.selected { border-color: var(--accent); background: #eef3ff; }
+
+.case-id { font-weight: 700; grid-column: 1; }
+.case-label { grid-column: 2; color: var(--muted); }
+.case-badge { grid-column: 1 / span 2; margin-top: 0.25rem; font-weight: 600; font-size: 0.78rem; width: fit-content; padding: 0.1rem 0.5rem; border-radius: 999px; }
+
+.case-item.flagged .case-badge { background: var(--red-bg); color: var(--red); }
+.case-item.clear .case-badge { background: var(--green-bg); color: var(--green); }
+
+.case-detail {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
+}
+
+.banner {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.banner-review { background: var(--red-bg); color: var(--red); }
+.banner-clear { background: var(--green-bg); color: var(--green); }
+
+.case-detail h2 { margin: 0 0 0.3rem; font-size: 1.2rem; }
+
+.claim-text { color: var(--muted); font-style: italic; margin: 0 0 0.9rem; }
+
+.case-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  margin: 0 0 1.1rem;
+}
+
+.case-meta div { background: #f8f9fb; border-radius: 8px; padding: 0.5rem 0.65rem; }
+.case-meta dt { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--muted); margin: 0; }
+.case-meta dd { margin: 0.15rem 0 0; font-weight: 600; font-size: 0.88rem; }
+
+.case-detail h3 { font-size: 0.95rem; margin: 1.1rem 0 0.5rem; color: var(--navy); }
+
+.records-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.records-table th, .records-table td { text-align: left; padding: 0.45rem 0.5rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.records-table th { color: var(--muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
+.records-table td.note { color: var(--muted); }
+
+.flag-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+
+.flag { border-radius: 8px; padding: 0.6rem 0.8rem; font-size: 0.85rem; }
+.flag p { margin: 0.2rem 0 0; }
+.flag-high { background: var(--red-bg); color: var(--red); }
+.flag-medium { background: var(--amber-bg); color: var(--amber); }
+.flag-none { background: var(--green-bg); color: var(--green); }
+
+.metrics {
+  margin-top: 1.4rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.1rem 1.3rem;
+}
+
+.metrics h2 { margin: 0 0 0.8rem; font-size: 1rem; color: var(--navy); }
+
+.metric-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem; }
+
+.metric-card {
+  background: #f8f9fb;
+  border-radius: 8px;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.metric-value { display: block; font-size: 1.5rem; font-weight: 800; color: var(--navy); }
+.metric-label { font-size: 0.75rem; color: var(--muted); }
+
+.metric-note { font-size: 0.82rem; color: var(--muted); margin: 0.9rem 0 0; }
+
+.site-footer {
+  max-width: 980px;
+  margin: 2rem auto 0;
+  padding: 1.3rem 1.5rem 2.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.site-footer h2 { font-size: 0.95rem; color: var(--navy); }
+
+.repo-note { margin-top: 1rem; }
+.repo-note a { color: var(--accent); }
+
+@media (max-width: 760px) {
+  .app-grid { grid-template-columns: 1fr; }
+  .case-list { max-height: 260px; }
+  .case-meta { grid-template-columns: repeat(2, 1fr); }
+  .metric-row { grid-template-columns: repeat(2, 1fr); }
+}

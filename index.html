@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MissingGuard — Claim-Evidence Consistency Engine</title>
+<meta name="description" content="A Human-in-the-Loop AI audit layer that cross-checks missing-person case closure claims against evidence, and flags inconsistencies for human review.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="brand">
+    <span class="brand-mark">🛡</span>
+    <div>
+      <h1>MissingGuard</h1>
+      <p class="tagline">Claim-Evidence Consistency Engine (CECE) — a Human-in-the-Loop safeguard for missing-person case closures</p>
+    </div>
+  </div>
+  <p class="thesis">"AI should not decide when a missing-person search ends. It should make sure the evidence supports the decision."</p>
+</header>
+
+<main>
+  <section class="intro">
+    <p>
+      When a missing-person case is closed, the closure report makes a <strong>claim</strong>
+      (e.g. "confirmed in person", "confirmed by phone"). MissingGuard cross-checks that claim
+      against the <strong>evidence</strong> on file &mdash; call logs, photo/biometric ID, timestamps,
+      locations, and other system records &mdash; and flags cases where the claim and the evidence
+      don't actually line up. <strong>It never closes, reopens, or judges a case itself.</strong>
+      It only surfaces inconsistencies and routes them to a human supervisor.
+    </p>
+    <p class="disclaimer">
+      All case data below is <strong>synthetic</strong> (no real police records or personal data are used).
+      This prototype was motivated by public reporting on falsified case-closure reviews in South Korea
+      (Jeju, 2025&ndash;26) and demonstrates the detection logic described in the MissingGuard project plan.
+    </p>
+  </section>
+
+  <section class="mode-toggle" aria-label="Detection model">
+    <span class="mode-label">Detection model:</span>
+    <div class="toggle-group" id="modeToggle">
+      <button data-mode="rules" class="mode-btn">A · Rules-only baseline</button>
+      <button data-mode="hybrid" class="mode-btn active">C · MissingGuard Hybrid</button>
+    </div>
+    <p class="mode-desc" id="modeDesc"></p>
+  </section>
+
+  <section class="app-grid">
+    <nav class="case-list" id="caseList" aria-label="Case list"></nav>
+    <article class="case-detail" id="caseDetail"></article>
+  </section>
+
+  <section class="metrics" id="metrics" aria-label="Dataset summary"></section>
+</main>
+
+<footer class="site-footer">
+  <h2>AI Ethics</h2>
+  <ul>
+    <li>MissingGuard does not auto-close or auto-reopen cases &mdash; the final decision always stays with a human.</li>
+    <li>MissingGuard does not accuse an officer of lying &mdash; it only shows where records and evidence disagree.</li>
+    <li>Synthetic data only &mdash; no real personal information is used in this prototype.</li>
+    <li>Every flag comes with an explanation of which records conflict and why, not just a risk score.</li>
+    <li>Default action on a flag is "request human review", never automatic blocking.</li>
+  </ul>
+  <p class="repo-note">Prototype for WAICY 2026 · Team Siwool &middot; <a href="https://github.com/sbrothers7/MissingGuard" target="_blank" rel="noopener">source on GitHub</a></p>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
